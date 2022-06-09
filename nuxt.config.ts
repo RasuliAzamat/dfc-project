@@ -12,5 +12,11 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ['@/assets/css/tailwind.css'],
+  app: {
+    head: {
+      meta: [{name: 'viewport', content: 'width=device-width, initial-scale=1'}],
+      script: [{src: './assets/js/index.js'}],
+    },
+  },
+  css: ['@/assets/css/tailwind.css', '@/assets/css/index.css'],
 })

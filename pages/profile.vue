@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>INDEX</h1>
+    <h1>PROFILE</h1>
   </div>
 </template>
 

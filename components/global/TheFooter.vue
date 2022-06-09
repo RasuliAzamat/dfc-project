@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>INDEX</h1>
-  </div>
+  <div>footer</div>
 </template>
 
 <script setup></script>
