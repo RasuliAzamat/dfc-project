@@ -1,18 +1,20 @@
 <template>
   <section>
-    <div class="flex flex-col sm:flex-row items-center justify-between">
-      <div class="w-full sm:basis-1/2 lg:basis-1/3">
-        <h1 class="mb-3 sm:mb-5">Справка не выходя из дома</h1>
-        <p class="mb-7 sm:mb-10">
+    <div class="flex flex-col-reverse md:flex-row items-center justify-between">
+      <div class="w-full md:basis-1/2 lg:basis-1/3 md:mr-5 lg:mr-0">
+        <h1 class="mb-3 md:mb-5">Справка не выходя из дома</h1>
+        <p class="mb-7 md:mb-10">
           <strong class="text-sky-500">Судимости<span class="text-slate-900">.нет</span></strong> -
           это платформа с помощью которой вы можете получить справку об отсутвии судимости. Просто
           оставьте заявку заполнив форму своими данными!
         </p>
-        <button class="px-10 sm:px-16 py-2 rounded-xl font-semibold text-lg sm:text-xl text-white bg-sky-500">
+        <button
+          class="px-10 sm:px-16 py-2 rounded-xl font-semibold text-lg sm:text-xl text-white bg-sky-500"
+        >
           Нужна справка
         </button>
       </div>
-      <div class="hidden sm:inline-block basis-1/2">
+      <div class="w-full basis-1/2 mb-5 md:mb-0">
         <svg
           class="animated"
           id="freepik_stories-law-firm"

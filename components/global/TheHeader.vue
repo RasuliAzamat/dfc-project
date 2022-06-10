@@ -52,7 +52,6 @@ const isMenuVisible = ref(false)
 
 const navLinks = ref([
   {id: Date.now(), text: 'О справке', route: '/'},
-  {id: Date.now(), text: 'Как получить', route: '/process'},
   {id: Date.now(), text: 'Оставить заявку', route: '/application'},
   {id: Date.now(), text: 'Профиль', route: '/profile'},
 ])

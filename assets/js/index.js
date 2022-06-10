@@ -29,4 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#freepik_stories-law-firm').classList.add('animated'),
     1000
   )
+  window.setTimeout(
+    document.querySelector('#freepik_stories-fill-out').classList.add('animated'),
+    1000
+  )
 })
