@@ -18,5 +18,11 @@ export default defineNuxtConfig({
       script: [{src: './assets/js/index.js'}],
     },
   },
+  router: {
+    options: {
+      linkActiveClass: 'active',
+      linkExactActiveClass: 'active',
+    },
+  },
   css: ['@/assets/css/tailwind.css', '@/assets/css/index.css'],
 })
