@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="mb-10 text-center text-3xl md:text-4xl lg:text-5xl">О справке</h1>
+    <h1 class="mb-10 text-center">О справке</h1>
 
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="w-full md:basis-1/2 md:mr-5 lg:mr-0 mb-5 md:mb-0">

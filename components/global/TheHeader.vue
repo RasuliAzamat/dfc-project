@@ -7,7 +7,12 @@
 
       <ul class="hidden md:flex md:mt-2">
         <li v-for="{id, text, route} in navLinks" :key="id" class="mr-5 lg:mr-10 last:mr-0">
-          <NuxtLink :to="route" class="text-lg md:text-xl">{{ text }}</NuxtLink>
+          <NuxtLink
+            :to="route"
+            class="border-b-2 border-b-transparent text-lg md:text-xl transition-all hover:border-b-sky-500"
+          >
+            {{ text }}
+          </NuxtLink>
         </li>
       </ul>
 
@@ -24,18 +29,18 @@
           {'opacity-100': isMenuVisible},
           {'top-8': isMenuVisible},
           {'z-50': isMenuVisible},
-          {visible: isMenuVisible},
+          {'visible': isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
           {'opacity-0': !isMenuVisible},
           {'-top-full': !isMenuVisible},
           {'-z-50': !isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
-          {invisible: !isMenuVisible},
+          {'invisible': !isMenuVisible},
         ]"
       >
         <ul class="flex flex-col items-center -mt-96">
           <li v-for="{id, text, route} in navLinks" :key="id" class="mb-3 last:mb-0">
-            <NuxtLink :to="route" class="text-2xl" @click="isMenuVisible = !isMenuVisible">
+            <NuxtLink :to="route" @click="isMenuVisible = !isMenuVisible" class="text-2xl">
               {{ text }}
             </NuxtLink>
           </li>

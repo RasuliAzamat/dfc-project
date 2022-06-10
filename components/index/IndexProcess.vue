@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1 class="mb-10 text-center text-3xl md:text-4xl lg:text-5xl">Как получить?</h1>
+    <h1 class="mb-10 text-center">Как получить?</h1>
 
     <div class="flex flex-col-reverse md:flex-row items-center justify-between">
       <div class="w-full md:basis-1/2 lg:basis-1/3 md:mr-5 lg:mr-0">
