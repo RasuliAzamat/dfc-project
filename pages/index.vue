@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>INDEX</h1>
+    <IndexMain />
   </div>
 </template>
-
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped></style>

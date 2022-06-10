@@ -24,3 +24,9 @@ setInterval(() => {
     (mobileMenu = document.querySelector('.mobile-menu'))
   )
 })
+document.addEventListener('DOMContentLoaded', function () {
+  window.setTimeout(
+    document.querySelector('#freepik_stories-law-firm').classList.add('animated'),
+    1000
+  )
+})

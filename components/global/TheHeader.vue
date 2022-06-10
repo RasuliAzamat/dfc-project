@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="mb-10">
     <nav class="flex items-center justify-between relative">
       <NuxtLink to="/" class="font-bold text-2xl md:text-3xl text-sky-500">
         Судимости<span class="text-slate-900">.нет</span>
@@ -24,13 +24,13 @@
           {'opacity-100': isMenuVisible},
           {'top-8': isMenuVisible},
           {'z-50': isMenuVisible},
-          {'visible': isMenuVisible},
+          {visible: isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
           {'opacity-0': !isMenuVisible},
           {'-top-full': !isMenuVisible},
           {'-z-50': !isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
-          {'invisible': !isMenuVisible},
+          {invisible: !isMenuVisible},
         ]"
       >
         <ul class="flex flex-col items-center -mt-96">
