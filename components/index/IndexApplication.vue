@@ -7,7 +7,7 @@
         ответ в кратчайшие сроки!
       </p>
       <button
-        class="px-16 sm:px-20 py-3 font-semibold text-xl sm:text-2xl border-2 rounded-xl border-sky-500 text-sky-500 transition-all hover:text-white hover:bg-sky-500"
+        class="px-20 sm:px-28 py-1.5 md:py-3 font-semibold text-xl sm:text-2xl border-2 rounded-xl border-sky-500 text-sky-500 transition-all hover:text-white hover:bg-sky-500"
       >
         К форме
       </button>

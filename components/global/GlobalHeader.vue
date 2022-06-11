@@ -1,6 +1,6 @@
 <template>
-  <header class="mb-10">
-    <nav class="flex items-center justify-between relative">
+  <header class="sticky top-0 left-0 right-0 bg-white py-2 md:py-5">
+    <nav class="flex items-center justify-between">
       <NuxtLink to="/" class="font-bold text-2xl md:text-3xl text-sky-500">
         Судимости<span class="text-slate-900">.нет</span>
       </NuxtLink>
@@ -18,6 +18,12 @@
 
       <div class="inline-block md:hidden mt-1">
         <MenuIcon
+          v-if="!isMenuVisible"
+          class="w-6 cursor-pointer text-slate-900"
+          @click="isMenuVisible = !isMenuVisible"
+        />
+        <XIcon
+          v-if="isMenuVisible"
           class="w-6 cursor-pointer text-slate-900"
           @click="isMenuVisible = !isMenuVisible"
         />
@@ -25,20 +31,21 @@
 
       <div
         :class="[
-          'absolute left-0 right-0 min-h-screen flex items-center justify-center bg-white transition-all mobile-menu',
+          'absolute left-0 right-0 h-96 rounded-md flex items-center justify-center bg-white transition-all mobile-menu',
           {'opacity-100': isMenuVisible},
-          {'top-8': isMenuVisible},
+          {'top-10': isMenuVisible},
           {'z-50': isMenuVisible},
-          {'visible': isMenuVisible},
+          {visible: isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
           {'opacity-0': !isMenuVisible},
           {'-top-full': !isMenuVisible},
           {'-z-50': !isMenuVisible},
           {'pointer-events-auto': !isMenuVisible},
-          {'invisible': !isMenuVisible},
+          {invisible: !isMenuVisible},
         ]"
+        style="box-shadow: 0px 15px 20px -20px rgba(0, 0, 0, 0.5)"
       >
-        <ul class="flex flex-col items-center -mt-96">
+        <ul class="flex flex-col items-center">
           <li v-for="{id, text, route} in navLinks" :key="id" class="mb-3 last:mb-0">
             <NuxtLink :to="route" @click="isMenuVisible = !isMenuVisible" class="text-2xl">
               {{ text }}
@@ -51,7 +58,7 @@
 </template>
 
 <script setup>
-import {MenuIcon} from '@heroicons/vue/solid'
+import {MenuIcon, XIcon} from '@heroicons/vue/solid'
 
 const isMenuVisible = ref(false)
 

@@ -8,7 +8,7 @@
         оставьте заявку заполнив форму своими данными!
       </p>
       <button
-        class="px-10 sm:px-16 py-2 font-semibold text-lg sm:text-xl border-2 rounded-xl border-sky-500 text-white bg-sky-500 transition-all hover:text-sky-500 hover:bg-white"
+        class="px-10 sm:px-16 py-1 md:py-2 font-semibold text-lg sm:text-xl border-2 rounded-xl border-sky-500 text-white bg-sky-500 transition-all hover:text-sky-500 hover:bg-white"
       >
         Нужна справка
       </button>
