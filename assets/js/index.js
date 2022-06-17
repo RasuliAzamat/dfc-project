@@ -24,17 +24,3 @@
 //     (mobileMenu = document.querySelector('.mobile-menu'))
 //   )
 // })
-document.addEventListener('DOMContentLoaded', function () {
-  window.setTimeout(
-    document.querySelector('#freepik_stories-law-firm').classList.add('animated'),
-    1000
-  )
-  window.setTimeout(
-    document.querySelector('#freepik_stories-fill-out').classList.add('animated'),
-    1000
-  )
-  window.setTimeout(
-    document.querySelector('#freepik_stories-process').classList.add('animated'),
-    1000
-  )
-})

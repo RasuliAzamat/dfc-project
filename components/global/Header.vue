@@ -1,15 +1,15 @@
 <template>
   <header class="sticky top-0 left-0 right-0 bg-white py-2 md:py-5">
     <nav class="flex items-center justify-between">
-      <NuxtLink to="/" class="font-bold text-2xl md:text-3xl text-sky-500">
-        Судимости<span class="text-slate-900">.нет</span>
+      <NuxtLink to="/" class="font-bold text-2xl md:text-3xl text-primary">
+        Судимости<span class="text-dark">.нет</span>
       </NuxtLink>
 
       <ul class="hidden md:flex md:mt-2">
         <li v-for="{id, text, route} in navLinks" :key="id" class="mr-5 lg:mr-10 last:mr-0">
           <NuxtLink
             :to="route"
-            class="border-b-2 border-b-transparent text-lg md:text-xl transition-all hover:border-b-sky-500"
+            class="border-b-2 border-b-transparent text-lg md:text-xl transition-all hover:border-b-primary"
           >
             {{ text }}
           </NuxtLink>
@@ -19,12 +19,12 @@
       <div class="inline-block md:hidden mt-1">
         <MenuIcon
           v-if="!isMenuVisible"
-          class="w-6 cursor-pointer text-slate-900"
+          class="w-6 cursor-pointer text-dark"
           @click="isMenuVisible = !isMenuVisible"
         />
         <XIcon
           v-if="isMenuVisible"
-          class="w-6 cursor-pointer text-slate-900"
+          class="w-6 cursor-pointer text-dark"
           @click="isMenuVisible = !isMenuVisible"
         />
       </div>

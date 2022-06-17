@@ -6,4 +6,8 @@ node_modules
 .output
 .env
 .vscode
+.firebase
+.github
+.firebaserc
+firebase.json
 dist
