@@ -87,6 +87,12 @@
 
 <script setup>
 import {TabGroup, TabList, Tab, TabPanels, TabPanel} from '@headlessui/vue'
+
+const steps = shallowRef([
+  {id: '1', text: '1 шаг'},
+  {id: '2', text: '2 шаг'},
+  {id: '3', text: '3 шаг'},
+])
 </script>
 
 <style lang="postcss" scoped>
