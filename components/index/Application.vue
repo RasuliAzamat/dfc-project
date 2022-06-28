@@ -6,7 +6,9 @@
         Кликните на кнопку ниже, чтобы перейти к заполнению формы для получения справки. Вы поулчите
         ответ в кратчайшие сроки!
       </p>
-      <UiButton>К форме</UiButton>
+      <UiButton>
+        <NuxtLink to="/application">К форме</NuxtLink>
+      </UiButton>
     </div>
   </section>
 </template>

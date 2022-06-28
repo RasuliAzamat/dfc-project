@@ -7,7 +7,9 @@
         платформа с помощью которой вы можете получить справку об отсутвии судимости. Просто
         оставьте заявку заполнив форму своими данными!
       </p>
-      <UiButton>Нужна справка</UiButton>
+      <UiButton>
+        <NuxtLink to="/application">Нужна справка</NuxtLink>
+      </UiButton>
     </div>
     <div class="w-full basis-1/2 mb-5 md:mb-0">
       <IllustrationsLawFirm />

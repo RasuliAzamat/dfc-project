@@ -1,104 +1,158 @@
 <template>
-  <TabGroup>
-    <TabList class="flex justify-between">
-      <Tab v-for="{id, text} in steps" :key="id" as="template" v-slot="{selected}">
-        <button
-          :class="[
-            'w-full py-1 px-5 text-xl border-b-2',
-            selected ? 'border-b-primary text-primary font-semibold' : 'border-b-transparent',
-          ]"
-        >
-          {{ text }}
-        </button>
-      </Tab>
-    </TabList>
-    <TabPanels class="mt-7 md:mt-10">
-      <form action="#" method="post">
-        <TabPanel>
-          <div class="mb-5">
-            <label for="born">Ваше имя</label>
-            <input type="text" name="name" id="name" placeholder="Имя" />
-            <!-- <small class="text-red-500">Далеко-далеко за словесными горами в стране.</small> -->
-          </div>
-          <div class="mb-5">
-            <label for="born">Ваша фамилия</label>
-            <input type="text" name="surname" id="surname" placeholder="Фамилия" />
-          </div>
-          <div class="mb-5">
-            <label for="born">Дата вашего рождения</label>
-            <input type="date" name="born" id="born" />
-          </div>
-          <div class="mb-5">
-            <label for="born">Адрес вашей прописки</label>
-            <input type="text" name="adress" id="adress" placeholder="Адресс" />
-          </div>
-          <div class="mb-10">
-            <label for="born">Ваш индивидуальный номер налогоплательщика</label>
-            <input type="text" name="itn" id="itn" placeholder="ИНН" />
-          </div>
-          <UiButton>Далее</UiButton>
-        </TabPanel>
-        <TabPanel>
-          <div class="mb-5">
-            <label class="block mb-3" for="application">
-              Прикрепите фотографию заполненной анекты по
-              <a href="#" class="underline text-primary">бланку</a>
-            </label>
-            <input type="file" name="application" id="application" />
-          </div>
-          <div class="mb-5">
-            <label class="block mb-3" for="passport">
-              Прикрепите фотографию лицовой стороны фашего пасспорта
-            </label>
-            <input type="file" name="passport" id="passport" />
-          </div>
-          <div class="mb-5">
-            <label class="block mb-3" for="selfie">
-              Сделайте селфи с лицовой стороной вашего пасспорта и прикрепите фотографию
-            </label>
-            <input type="file" name="selfie" id="selfie" />
-          </div>
-          <div class="mb-10">
-            <label class="block mb-3" for="check">
-              Прикрепите фотографию чека оплаты справки от Амонатбонк
-            </label>
-            <input type="file" name="check" id="check" />
-          </div>
+  <form action="#" method="post">
+    <div class="md:h-96 md:pr-5 md:mb-10 md:overflow-y-auto">
+      <div class="mb-5">
+        <label for="born">Ваше имя</label>
+        <input type="text" name="name" id="name" placeholder="Имя" v-model="nameValue" />
+        <small v-if="nameError">{{ nameError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="born">Ваша фамилия</label>
+        <input
+          type="text"
+          name="surname"
+          id="surname"
+          placeholder="Фамилия"
+          v-model="surnameValue"
+        />
+        <small v-if="surnameError">{{ surnameError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="born">Ваш телефон</label>
+        <input type="tel" name="tel" id="tel" placeholder="Телафон" v-model="telValue" />
+        <small v-if="telError">{{ telError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="born">Ваш email</label>
+        <input type="email" name="email" id="email" placeholder="Email" v-model="emailValue" />
+        <small v-if="emailError">{{ emailError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="borndate">Дата вашего рождения</label>
+        <input
+          type="date"
+          name="borndate"
+          id="borndate"
+          v-model="borndateValue"
+          @change="onBorndateChange"
+        />
+        <small v-if="dateError || borndateError">{{ dateError || borndateError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="born">Адрес вашей прописки</label>
+        <input type="text" name="adress" id="adress" placeholder="Адресс" v-model="adressValue" />
+        <small v-if="adressError">{{ adressError }}</small>
+      </div>
+      <div class="mb-10">
+        <label for="born">Ваш индивидуальный номер налогоплательщика</label>x
+        <input type="text" name="itn" id="itn" placeholder="ИНН" v-model="itnValue" />
+        <small v-if="itnError">{{ itnError }}</small>
+      </div>
+      <div class="mb-5">
+        <label class="block mb-3" for="application">
+          Прикрепите фотографию заполненной анекты по
+          <a href="#" class="underline text-primary">бланку</a>
+        </label>
+        <input
+          type="file"
+          name="application"
+          id="application"
+          :value="application"
+          @change="onFileChange"
+        />
+        <small v-if="applicationError">{{ applicationError }}</small>
+      </div>
+      <div class="mb-5">
+        <label class="block mb-3" for="passport">
+          Прикрепите фотографию лицовой стороны фашего пасспорта
+        </label>
+        <input type="file" name="passport" id="passport" :value="passport" @change="onFileChange" />
+        <small v-if="passportError">{{ passportError }}</small>
+      </div>
+      <div class="mb-5">
+        <label class="block mb-3" for="selfie">
+          Сделайте селфи с лицовой стороной вашего пасспорта и прикрепите фотографию
+        </label>
+        <input type="file" name="selfie" id="selfie" :value="selfie" @change="onFileChange" />
+        <small v-if="selfieError">{{ selfieError }}</small>
+      </div>
+      <div class="mb-10">
+        <label class="block mb-3" for="check">
+          Прикрепите фотографию чека оплаты справки от Амонатбонк
+        </label>
+        <input type="file" name="check" id="check" :value="check" @change="onFileChange" />
+        <small v-if="checkError">{{ checkError }}</small>
+      </div>
+      <div class="mb-5">
+        <label for="labguage">Выберите зык текста справки</label>
+        <select name="language" id="language" v-model="languageValue">
+          <option value="tajik">На таджикском</option>
+          <option value="russian">На русском</option>
+        </select>
+        <small v-if="languageError">{{ languageError }}</small>
+      </div>
 
-          <UiButton>Далее</UiButton>
-        </TabPanel>
-        <TabPanel>
-          <select class="mb-10" name="language" id="language">
-            <option value="default" selected disabled>Выберите язык текста справки</option>
+      <div class="mb-10 md:mb-5">
+        <label for="urgency">
+          Выберите Cрочность получения справки (по квитанции от Амонатбонка)
+        </label>
+        <select name="urgency" id="urgency" v-model="urgencyValue">
+          <option value="usual">Обычный - до 10 дней (20 сомон)</option>
+          <option value="urgent">Срочный - до 3 дней (40 сомон)</option>
+        </select>
+        <small v-if="urgencyError">{{ urgencyError }}</small>
+      </div>
+    </div>
 
-            <option value="tajik">На таджикском</option>
-            <option value="russian">На русском</option>
-          </select>
-          <div class="flex items-center mb-3">
-            <input type="checkbox" name="agreement" id="agreement" class="w-5 h-5 mr-3" />
-            <label for="agreement">Я согласен с условиями обработки моих данных</label>
-          </div>
-          <UiButton>Отправить</UiButton>
-        </TabPanel>
-      </form>
-    </TabPanels>
-  </TabGroup>
+    <div class="mb-3">
+      <div class="flex items-center">
+        <input
+          type="checkbox"
+          name="agreement"
+          id="agreement"
+          class="w-5 h-5 mr-3"
+          v-model="agreementValue"
+        />
+        <label for="agreement">
+          Я согласен с <a href="#" class="underline text-primary">условиями обработки</a> моих
+          данных
+        </label>
+      </div>
+
+      <small v-if="agreementError">{{ agreementError }}</small>
+    </div>
+
+    <UiButton
+      @click.prevent="formSubmit"
+      :disabled="isSubmitting || isTooManyAttepmpts"
+      :class="['disabled:pointer-events-none disabled:opacity-50', {}]"
+    >
+      Отправить
+    </UiButton>
+    <small v-if="isTooManyAttepmpts">Вы слишком часто отправляете форму. Повторите позже</small>
+  </form>
 </template>
 
-<script setup>
-import {TabGroup, TabList, Tab, TabPanels, TabPanel} from '@headlessui/vue'
+<script>
+import {useFormSubmit} from '/composables/hooks/formSubmit'
 
-const steps = shallowRef([
-  {id: '1', text: '1 шаг'},
-  {id: '2', text: '2 шаг'},
-  {id: '3', text: '3 шаг'},
-])
+export default {
+  setup() {
+    return {...useFormSubmit()}
+  },
+}
 </script>
 
 <style lang="postcss" scoped>
+small {
+  @apply block text-red-500;
+}
+
 input[type='text'],
 input[type='date'],
 input[type='number'],
+input[type='email'],
+input[type='tel'],
 select {
   @apply w-full px-4 py-1 border rounded-md border-light  placeholder:text-light transition-all focus:border-primary focus:placeholder:text-dark;
 }

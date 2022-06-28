@@ -3,10 +3,10 @@
     <h1 class="mb-5 md:mb-10 lg:mb-0 text-center">Форма заявления на справку</h1>
 
     <div class="flex flex-col md:flex-row items-center justify-between">
-      <div class="w-full md:basis-1/2 lg:basis-3/5">
+      <div class="w-full md:basis-1/2 lg:basis-3/5 self-baseline">
         <IllustrationsForms />
       </div>
-      <div class="w-full md:basis-1/2 lg:basis-2/5 self-stretch mt-0 xl:mt-32">
+      <div class="w-full md:basis-1/2 lg:basis-2/5 self-stretch mt-0 lg:mt-32 ">
         <ApplicationForm />
       </div>
     </div>
@@ -15,4 +15,4 @@
 
 <script setup></script>
 
-<style lang="postcss" scoped></style>
+<style lang="css" scoped></style>
