@@ -1,12 +1,12 @@
 <template>
-  <div class="app-container w-full p-4 lg:p-6 rounded-md">
-    <GlobalHeader />
+  <div>
+    <GlobalHeader class="app-container w-full p-4 lg:p-6" />
 
-    <main class="min-h-screen pointer-events-auto">
+    <main class="app-container w-full p-4 lg:p-6 min-h-screen pointer-events-auto">
       <slot />
     </main>
 
-    <GlobalFooter class="mt-auto" />
+    <GlobalFooter class="w-full p-4 lg:p-6 mt-auto" />
   </div>
 </template>
 

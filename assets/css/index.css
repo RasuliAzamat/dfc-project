@@ -4,15 +4,15 @@
 
 @layer base {
   ::-webkit-scrollbar {
-    @apply w-2 rounded-2xl;
+    @apply w-2;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-200 rounded-2xl;
+    @apply bg-slate-200;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-2xl;
+    @apply bg-primary;
   }
 
   *,
@@ -35,6 +35,16 @@
   select,
   textarea {
     @apply border-inherit outline-none bg-transparent;
+  }
+
+  input[type='text'],
+  input[type='date'],
+  input[type='number'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  select {
+    @apply w-full px-4 py-1 border rounded-md border-light  placeholder:text-light transition-all focus:border-primary focus:placeholder:text-dark;
   }
 
   h1 {
