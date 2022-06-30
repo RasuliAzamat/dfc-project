@@ -10,7 +10,6 @@
     "@headlessui/vue": "^1.6.4",
     "@heroicons/vue": "^1.0.6",
     "vee-validate": "^4.5.11",
-    "vuetify": "^2.6.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
