@@ -13,7 +13,7 @@
             <small v-if="passwordError">{{ passwordError }}</small>
           </div>
           <div class="mb-5">
-            <label for="password">Подтвердите пароль</label>
+            <label for="confirm">Подтвердите пароль</label>
             <input type="password" name="confirm" id="confirm" placeholder="Пароль" v-model="confirmValue" />
             <small v-if="confirmError">{{ confirmError }}</small>
           </div>

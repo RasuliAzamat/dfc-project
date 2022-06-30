@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-10 md:mt-16 lg:mt-20">
+  <section>
     <h1 class="mb-5 md:mb-10 lg:mb-0 text-center">Форма заявления на справку</h1>
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="w-full md:basis-1/2 lg:basis-3/5 self-baseline">

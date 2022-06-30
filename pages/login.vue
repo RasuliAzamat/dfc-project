@@ -8,7 +8,7 @@
         <form action="/login" method="post">
           <h2 class="mb-10">Вход</h2>
           <div class="mb-5">
-            <label for="born">Введите email</label>
+            <label for="email">Введите email</label>
             <input type="email" name="email" id="email" placeholder="Email" v-model="emailValue" />
             <small v-if="emailError">{{ emailError }}</small>
           </div>

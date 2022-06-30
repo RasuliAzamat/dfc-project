@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 left-0 right-0 bg-white py-2 md:py-5">
+  <header class="app-container p-4 lg:p-6 mx-auto mb-10 md:mb-16 lg:mb-20 sticky top-0 left-0 right-0 bg-white">
     <nav class="flex items-center justify-between">
       <NuxtLink to="/" class="font-bold text-2xl md:text-3xl text-primary">
         Судимости<span class="text-dark">.нет</span>

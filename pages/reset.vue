@@ -8,7 +8,7 @@
         <form action="/reset" method="post">
           <h2 class="mb-10">Сброс пароля</h2>
           <div class="mb-5">
-            <label for="born">Введите свой email адрес для восстановления пароля</label>
+            <label for="email">Введите свой email адрес для восстановления пароля</label>
             <input type="email" name="email" id="email" placeholder="Email" v-model="emailValue" />
             <small v-if="emailError">{{ emailError }}</small>
           </div>

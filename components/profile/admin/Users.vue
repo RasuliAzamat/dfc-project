@@ -1,5 +1,5 @@
 <template>
-  <div><NuxtLink to="/login">PROFILE</NuxtLink></div>
+  <div>Users</div>
 </template>
 
 <script setup></script>

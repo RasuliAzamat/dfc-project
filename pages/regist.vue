@@ -8,10 +8,10 @@
         <form action="/regist" method="post">
           <h2 class="mb-10">Регистрирация</h2>
           <div class="mb-5">
-          <label for="born">Введите имя</label>
-          <input type="text" name="name" id="name" placeholder="Имя" v-model="nameValue" />
-          <small v-if="nameError">{{ nameError }}</small>
-        </div>
+            <label for="name">Введите имя</label>
+            <input type="text" name="name" id="name" placeholder="Имя" v-model="nameValue" />
+            <small v-if="nameError">{{ nameError }}</small>
+          </div>
           <div class="mb-5">
             <label for="email">Введите email</label>
             <input type="email" name="email" id="email" placeholder="Email" v-model="emailValue" />

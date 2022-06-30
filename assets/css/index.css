@@ -60,6 +60,10 @@
   }
 
   header nav ul li a.active {
-    @apply font-bold text-primary;
+    @apply text-primary;
+  }
+
+  .app-container {
+    max-width: 1440px;
   }
 }
